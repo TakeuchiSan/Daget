@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Hari Raya Idul Fitri 1446 H</title>
+    <style>
+        body {
+            background: #dcdcdc; /* Warna sedikit lebih gelap untuk kontras */
+            overflow: hidden;
+            height: 100vh;
+            position: relative;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            color: black;
+        }
+        .container {
+            margin-top: 50px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+            display: inline-block;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #2c3e50;
+        }
+        p {
+            font-size: 1.2em;
+            color: #34495e;
+        }
+        .amplop {
+            position: relative;
+            width: 200px;
+            height: 260px;
+            margin: 30px auto;
+            background: url('https://i.pinimg.com/736x/f3/a2/b8/f3a2b8a6c115c3d7e4edef235ef04636.jpg') no-repeat center/cover;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .isi, .qr-container, .pesan {
+            display: none;
+            margin-top: 20px;
+        }
+        .isi {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #27ae60;
+        }
+        .qr-container img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        .money {
+            position: fixed;
+            top: -100px;
+            width: 60px;
+            height: auto;
+            opacity: 1;
+            animation: fall 3s linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+        .pesan {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Selamat Hari Raya Idul Fitri 1446 Hijriah</h1>
+        <p>Mohon maaf lahir dan batin.</p>
+        <div class="amplop" onclick="bukaAmplop()"></div>
+        <div class="isi">Selamat Anda Mendapatkan Thr</div>
+        <div class="qr-container">
+        </div>
+        <div class="pesan">
+            <p><strong>Minal aidzin wal faidzin, mohon maaf lahir dan batin.</strong></p>
+            <p>Saya mohon maaf bila ada salah, mohon maafkan karena saya manusia bukan nabi, boy!</p>
+        </div>
+    </div>
+    <script>
+        function bukaAmplop() {
+            document.querySelector('.amplop').classList.add('buka');
+            setTimeout(() => {
+                document.querySelector('.isi').style.display = 'block';
+                document.querySelector('.qr-container').style.display = 'block';
+                document.querySelector('.pesan').style.display = 'block';
+                setInterval(jatuhkanUang, 300);
+                setTimeout(() => {
+                    window.location.href ="https://link.dana.id/danakaget?c=svqddx92j&r=clpgFI&orderId=20250330101214793115010300166002514804611";
+                }, 5000);
+            }, 1000);
+        }
+        function jatuhkanUang() {
+            let uang = document.createElement('img');
+            uang.src = 'https://i.pinimg.com/736x/4d/31/a1/4d31a12a1641d159ac4bc200b28c1abb.jpg';
+            uang.classList.add('money');
+            uang.style.left = Math.random() * window.innerWidth + 'px';
+            document.body.appendChild(uang);
+            setTimeout(() => uang.remove(), 3000);
+        }
+    </script>
+</body>
+</html>
